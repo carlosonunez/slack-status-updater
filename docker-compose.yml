@@ -22,6 +22,6 @@ services:
     volumes:
       - $PWD:/app
     working_dir: /app
+    entrypoint: cucumber
     command:
-      - "cucumber"
       - "features"
