@@ -26,5 +26,5 @@ $> curl -w '\n%{http_code}' -X POST https://slack.api.carlosnunez.me/v1/status -
 
 # How to test
 
-1. Use Docker Compose to bring up the stack: `docker-compose up -d`
+1. Use Docker Compose to bring up the API: `docker-compose up -d api`
 2. Run tests: `docker-compose run tests`

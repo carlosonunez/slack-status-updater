@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - 80:8080
+  tests:
+    build:
+      dockerfile: tests.Dockerfile
+      context: .
+    volumes:
+      - $PWD:/app
+    working_dir: /app
+    command:
+      - "rspec"
+      - "spec/**/*_spec.rb"
+  behavior-tests:
+    build:
+      dockerfile: tests.Dockerfile
+      context: .
+    volumes:
+      - $PWD:/app
+    working_dir: /app
+    command:
+      - "cucumber"
+      - "features"
