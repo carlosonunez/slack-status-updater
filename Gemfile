@@ -1,4 +1,4 @@
-soruce "rubygems.org"
+source "https://rubygems.org"
 
 group :test do
   gem 'cucumber'
@@ -7,5 +7,4 @@ end
 
 group :app do
   gem 'sinatra'
-  gem 'sinatra-rack'
 end
