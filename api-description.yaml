@@ -1,0 +1,40 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Slack Status API
+  license:
+    name: MIT
+host: slack.api.carlosnunez.me
+basepath: /v1
+schemes:
+  - https
+definitions:
+  Update:
+    properties:
+      secret_token:
+        type: string
+      slack_email_address:
+        type: string
+      slack_workspace:
+        type: string
+      new_status:
+        type: string
+paths:
+  /update:
+    post:
+      summary: Updates a status on Slack.
+      description: >-
+        Updates a status on Slack when provided with a status message.
+        Supports Slack emojis (i.e. ":emoji-name:").
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: update
+          schema:
+            $ref: '#/definitions/Update'
+      responses:
+        200:
+          description: Update posted.
